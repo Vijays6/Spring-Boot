@@ -1,4 +1,4 @@
-package com.vj.boot;
+package com.vj.boot.model;
 
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.vj.boot;
+package com.vj.boot.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
