@@ -23,6 +23,7 @@ public class Application {
 		StudentService studentService=applicationContext.getBean(StudentService.class);
 		studentService.addStudent(student);
 
+		System.out.println(studentService.getStudents());
 
 
 

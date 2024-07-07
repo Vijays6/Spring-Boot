@@ -15,11 +15,18 @@ public class StudentRepo {
 
     public void save(Student student) {
         String query = "insert into student(roll_no,name,marks) values (?,?,?);";
-        int rows=jdbcTemplate.update(query, student.getRollNo(), student.getName(), student.getMarks());
-        System.out.println(rows+" rows affected...");
+        int rows = jdbcTemplate.update(query, student.getRollNo(), student.getName(), student.getMarks());
+        System.out.println(rows + " rows affected...");
     }
 
     public List<Student> findAll() {
-        return new ArrayList<>();
+        String query = "select * from student;";
+        return jdbcTemplate.query(query, (rs, rowNum) -> {
+            Student student = new Student();
+            student.setRollNo(rs.getInt("roll_no"));
+            student.setName(rs.getString("name"));
+            student.setMarks(rs.getInt("marks"));
+            return student;
+        });
     }
 }
