@@ -15,14 +15,13 @@ public class Application {
 		ApplicationContext applicationContext =SpringApplication.run(Application.class, args);
 		Student student=applicationContext.getBean(Student.class);
 		student.setName("Thalapathy");
-		student.setRollNo(1006);
+		student.setRollNo(1007);
 		student.setMarks(800);
 
-		System.out.println(student);
+//		System.out.println(student);
 
 		StudentService studentService=applicationContext.getBean(StudentService.class);
 		studentService.addStudent(student);
-
 		System.out.println(studentService.getStudents());
 
 
